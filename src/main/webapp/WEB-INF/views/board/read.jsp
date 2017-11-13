@@ -3,30 +3,49 @@
     
 <%@include file="../include/header.jsp"%>    
 
+<style>
+	.header {
+		border : none;
+		border-top: 1px dotted black;
+	    color: #fff;
+	    background-color: #fff;
+	    height: 1px;
+	}
+
+</style>
+
 <form role="form" method="post">
 	<input type="hidden" name="bno" value="${boardVO.bno}">
 </form>
 
-<div class="box-body">
-     <div class="row">
-         <div class="col-sm-12">
-             <h2>${boardVO.title}</h2>
-             <h5><span class="glyphicon glyphicon-time"></span>
-	          Post by ${boardVO.writer}, ${boardVO.regdate }
-	         </h5>
-            
-             <p style="font-size:15px;">${boardVO.content}</p>
+<section class="content">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="box box-primary">
 
-             <br><br>
-             <hr/>
-           </div>
-      	</div>
-   </div>
-<div class="box-footer">
-	<button type="submit" class="btn btn-warning">Modify</button>
-	<button type="submit" class="btn btn-danger">REMOVE</button>
-	<button type="submit" class="btn btn-primary">LIST ALL</button>
+				<div class="box-header">
+					<h3 class="box-title">${boardVO.title}</h3>
+				</div>
+				<div class="box-body">
+		            <h5><span class="glyphicon glyphicon-time"></span>
+			        Post by ${boardVO.writer}, ${boardVO.regdate }
+			        </h5>
+			        <hr class="header">
+		            <p style="font-size:15px;">${boardVO.content}</p>
+		
+		            <br><br>
+			    </div>
+			<div class="box-footer">
+				<button type="submit" class="btn btn-warning">Modify</button>
+				<button type="submit" class="btn btn-danger">REMOVE</button>
+				<button type="submit" class="btn btn-primary">LIST ALL</button>
+			</div>
+		</div>
+	</div>
+	</div>
 </div>
+</section>
 <!-- /.box-body -->
 <script>
 $(document).ready(function(){
