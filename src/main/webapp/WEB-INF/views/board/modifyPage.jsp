@@ -11,7 +11,11 @@
 				<div class="box-header">
 					<h3 class="box-title">MODIFY BOARD</h3>
 				</div>
+				
 			<form role="form" method="post">	
+				<input type="hidden" name="page" value="${cri.page }">
+				<input type="hidden" name="perPageNum" value="${cri.perPageNum }">
+			
 				<div class="box-body">
 					<div class="form-group">
 						<label for="exampleInputEmail1">Title</label> <input type="text"
@@ -51,7 +55,7 @@ $(document).ready(function(){
 	});
 	
 	$(".btn-warning").on("click", function(){
-		self.location = "/board/listPage";
+		self.location = "/board/listPage?page=${cri.page}&perPageNum=${cri.perPageNum}";
 	});
 
 	

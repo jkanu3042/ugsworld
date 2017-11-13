@@ -1,5 +1,7 @@
 package org.ugsworld.test;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.junit.Test;
@@ -9,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.ugsworld.domain.BoardVO;
+import org.ugsworld.domain.Criteria;
 import org.ugsworld.persistence.BoardDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -44,9 +47,36 @@ public class BoardDAOTest {
 //		dao.update(board);
 //	}
 	
+//	@Test
+//	public void testDelete() throws Exception {
+//		dao.delete(1);
+//		
+//	}
+//	
+//	@Test
+//	public void TestListPage() throws Exception {
+//		int page = 3;
+//		List<BoardVO> list = dao.listPage(page);
+//		
+//		for (BoardVO boardVO : list) {
+//			logger.info(boardVO.getBno()+":"+boardVO.getTitle());
+//		}
+//		
+//		
+//	}
+	
+	
 	@Test
-	public void testDelete() throws Exception {
-		dao.delete(1);
+	public void testListCriteria() throws Exception{
+		Criteria cri = new Criteria();
+		cri.setPage(2);
+		cri.setPerPageNum(9);
+		
+		List<BoardVO> list = dao.listCriteria(cri);
+		
+		for(BoardVO vo : list) {
+			logger.info(vo.getBno()+ ":"+vo.getTitle());
+		}
 		
 	}
 	

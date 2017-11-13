@@ -32,7 +32,7 @@
 </head>
 <body>
 
-	<section class="hero">
+	<section>
 		<header>
 			<div class="wrapper">
 				<a href="/"><p class="logo"><strong>UsedGoodsWorld</strong></p></a>
@@ -50,10 +50,6 @@
 			</div>
 		</header><!--  end header section  -->
 		
-			<section class="caption">
-				<h2 class="caption">Used Goods World</h2>
-				<h3 class="properties"> IT - Computer - Mobile</h3>
-			</section>
 	</section><!--  end hero section  -->
 
 

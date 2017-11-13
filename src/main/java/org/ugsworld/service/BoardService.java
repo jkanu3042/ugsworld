@@ -3,6 +3,7 @@ package org.ugsworld.service;
 import java.util.List;
 
 import org.ugsworld.domain.BoardVO;
+import org.ugsworld.domain.Criteria;
 
 public interface BoardService {
 	
@@ -16,6 +17,9 @@ public interface BoardService {
 	
 	public List<BoardVO> listAll() throws Exception;
 	
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
+	
+	public int listCountCriteria(Criteria cri) throws Exception;
 	
 	
 	

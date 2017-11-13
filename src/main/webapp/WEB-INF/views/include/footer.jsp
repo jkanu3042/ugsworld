@@ -49,9 +49,8 @@
 		<div class="copyrights wrapper">
 			Copyright © 2015 <a href="http://pixelhint.com" target="_blank" class="ph_link" title="Download more free Templates">Pixelhint.com</a>. All Rights Reserved.
 		</div>
-	    <script type="text/javascript" src="/resources/LaCasa/js/jquery.js"></script>
-		<script type="text/javascript" src="/resources/LaCasa/js/main.js"></script>
-		  <!-- Bootstrap 3.3.2 JS -->
+
+		 <!-- Bootstrap 3.3.2 JS -->
 	    <script src="/resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 	    <!-- FastClick -->
 	    <script src='/resources/plugins/fastclick/fastclick.min.js'></script>
