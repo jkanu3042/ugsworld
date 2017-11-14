@@ -29,6 +29,8 @@
 	<!-- La Casa javascript Files -->
 	<script type="text/javascript" src="/resources/LaCasa/js/jquery.js"></script>
 	<script type="text/javascript" src="/resources/LaCasa/js/main.js"></script>
+	
+	
 </head>
 <body>
 

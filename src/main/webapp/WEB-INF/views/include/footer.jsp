@@ -49,7 +49,9 @@
 		<div class="copyrights wrapper">
 			Copyright © 2015 <a href="http://pixelhint.com" target="_blank" class="ph_link" title="Download more free Templates">Pixelhint.com</a>. All Rights Reserved.
 		</div>
-
+		
+		
+		
 		 <!-- Bootstrap 3.3.2 JS -->
 	    <script src="/resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 	    <!-- FastClick -->
