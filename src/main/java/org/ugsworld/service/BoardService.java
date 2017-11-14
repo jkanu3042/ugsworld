@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.ugsworld.domain.BoardVO;
 import org.ugsworld.domain.Criteria;
+import org.ugsworld.domain.SearchCriteria;
 
 public interface BoardService {
 	
@@ -17,11 +18,19 @@ public interface BoardService {
 	
 	public List<BoardVO> listAll() throws Exception;
 	
+	
+	
+	
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 	
 	public int listCountCriteria(Criteria cri) throws Exception;
 	
 	
+	
+	
+	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception;
+	
+	public int listSearchCount(SearchCriteria cri) throws Exception;
 	
 
 }
