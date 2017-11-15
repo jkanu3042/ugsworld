@@ -71,7 +71,9 @@
 			
 			<ul class="timeline">
 				<li class="time-label" id="repliesDiv">
-					<span class="bg-green">Replies List</span>
+					<span class="bg-blue">
+					댓글보기<small></small>
+					</span>
 				</li>
 			</ul>
 			

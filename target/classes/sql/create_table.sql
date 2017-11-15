@@ -21,3 +21,6 @@ create table tbl_reply (
 
 alter table tbl_reply add constraint fk_board 
 foreign key (bno) references tbl_board (bno);
+
+update tbl_board set replycnt = 
+(select count(rno) from tbl_reply where bno = tbl_board.bno) where bno >0;

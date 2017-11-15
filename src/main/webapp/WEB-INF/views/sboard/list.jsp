@@ -20,6 +20,9 @@
 						<h1>
 							<a href="/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}">${boardVO.title}</a>
 							<span>[${boardVO.replycnt}]</span>
+							<span class="property_size">
+								<small> / 조회수 : ${boardVO.viewcnt }</small>
+							</span>
 						</h1>
 						<h2> ${ boardVO.writer } 
 							<span class="property_size">
