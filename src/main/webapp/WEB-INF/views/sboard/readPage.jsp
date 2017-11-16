@@ -41,6 +41,8 @@
 			
 			            <br><br>
 				    </div>
+				<ul class="mailbox-attachments clearfix uploadedList"></ul>    
+				   
 				<div class="box-footer">
 					<button type="submit" id="modBtn" class="btn btn-warning">Modify</button>
 					<button type="submit" id="rmBtn" class="btn btn-danger">REMOVE</button>
@@ -48,6 +50,7 @@
 				</div>
 			</div>
 			<!-- 컨텐츠 영역 끝  -->
+			
 			
 			<!-- 댓글 쓰기 창 시작 -->
 			<div class="box box-success">
@@ -102,6 +105,9 @@
       <div class="modal-body" data-rno>
         <p><input type="text" id="replytext" class="form-control"></p>
       </div>
+      
+      <ul class="mailbox-attachments clearfix uploadedList"></ul>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-info" id="replyModBtn">Modify</button>
         <button type="button" class="btn btn-danger" id="replyDelBtn">DELETE</button>
@@ -112,6 +118,7 @@
 </div>    
 
 <!-- Handlerbars -->
+<script src="/resources/js/upload.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 <script id="template" type="text/x-handlebars-template">
 {{#each .}}
@@ -131,6 +138,16 @@
 </li>
 {{/each}}
 </script>
+<script id="templateAttach" type="text/x-handlebars-template">
+<li data-src='{{fullName}}'>
+  <span class="mailbox-attachment-icon has-img">
+		<img src="{{imgsrc}}" alt="Attachment">
+  </span>
+  <div class="mailbox-attachment-info">
+	<a href="{{getLink}}" class="mailbox-attachment-name">{{fileName}}</a>
+  </div>
+</li>                
+</script> 
 <script>
 var bno = ${boardVO.bno};
 var replyPage = 1;
@@ -277,13 +294,7 @@ $("#replyDelBtn").on("click",function(){
 		}});
 });
 
-
-
-
-
-
 </script>
-
 
 <script>
 $(document).ready(function(){
@@ -306,6 +317,21 @@ $(document).ready(function(){
 		formObj.attr("method", "get");
 		formObj.attr("action", "/sboard/list");
 		formObj.submit();
+	});
+	
+	var bno = ${boardVO.bno};
+	var template = Handlebars.compile($("#templateAttach").html());
+	
+	$.getJSON("/sboard/getAttach/"+bno, function(list){
+		$(list).each(function() {
+			
+			var fileInfo = getFileInfo(this);
+			
+			var html = template(fileInfo);
+			
+			$(".uploadedList").append(html);
+			
+		});
 	});
 	
 });

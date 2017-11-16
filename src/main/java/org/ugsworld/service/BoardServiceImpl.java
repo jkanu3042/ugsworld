@@ -18,10 +18,19 @@ public class BoardServiceImpl implements BoardService{
 	@Inject
 	private BoardDAO dao;
 	
-	
+	@Transactional
 	@Override
 	public void regist(BoardVO board) throws Exception {
+		
 		dao.create(board);
+		
+		String[] files = board.getFiles();
+		
+		if(files == null) { return; }
+		
+		for (String fileName : files) {
+			dao.addAttach(fileName);
+		}
 	}
 	
 	//읽기 시 조회수 증가 
@@ -49,6 +58,8 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+		
+		
 		return dao.listCriteria(cri);
 	}
 
@@ -58,13 +69,18 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
+	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {		
 		return dao.listSearch(cri);
 	}
 
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return dao.listSearchCount(cri);
+	}
+
+	@Override
+	public List<String> getAttach(Integer bno) throws Exception {
+		return dao.getAttach(bno);
 	}
 
 }

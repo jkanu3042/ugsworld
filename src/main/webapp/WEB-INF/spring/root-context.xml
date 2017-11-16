@@ -15,6 +15,11 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<tx:annotation-driven/>
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
@@ -33,12 +38,8 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
-	
-	<bean id="transacntionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource"></property>
-	</bean>
-	
-	<tx:annotation-driven/>
+
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	
 	<context:component-scan base-package="org.ugsworld.persistence"></context:component-scan>
 	<context:component-scan base-package="org.ugsworld.service"></context:component-scan>
