@@ -38,8 +38,9 @@
 				        </h5>
 				        <hr class="header">
 						<pre style="font-weight: 600;">
-							${boardVO.content}
+						${boardVO.content}
 						</pre>
+
 			            <br><br>
 				    </div>
 				<ul class="mailbox-attachments clearfix uploadedList"></ul>    
@@ -76,7 +77,7 @@
 			<ul class="timeline">
 				<li class="time-label" id="repliesDiv">
 					<span class="bg-blue">
-					댓글보기<small></small>
+					댓글보기<small>[ ${boardVO.replycnt } ]</small>
 					</span>
 				</li>
 			</ul>
