@@ -5,7 +5,11 @@
 <%@ page session="false" %>
 
 <%@include file="../include/header.jsp"%>
-	
+<style>
+.listings ul.properties_list li img.property_img {
+width:300px;
+}
+</style>
 	
 	<section class="listings">
 		<div class="wrapper">
@@ -13,7 +17,7 @@
 			<c:forEach items="${list}" var="boardVO">
 				<li>
 					<a href="/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}">
-						<img src="/displayFile?fileName=${boardVO.fullName}" alt="" title="" class="property_img"/>
+						<img src="/displayFile?fileName=${boardVO.fullName}" class="property_img"/>
 					</a>
 					<span class="price">$ ${boardVO.price}</span>
 					<div class="property_details">
@@ -107,7 +111,9 @@ $(document).ready(function(){
 		
 		self.location="register";
 	
-	});	
+	});
+	
+	
 	
 });
 

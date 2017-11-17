@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>UsedGoodsWorld에 오신걸 환영합니다.</title>
+	<title>UsedGoodsWorld에 오신걸 환영합니다</title>
 	<meta charset="utf-8">
 	<meta name="author" content="pixelhint.com">
 	<meta name="description" content="La casa free real state fully responsive html5/css3 home page website template"/>
