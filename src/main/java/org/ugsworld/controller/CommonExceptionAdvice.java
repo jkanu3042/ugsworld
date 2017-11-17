@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @ControllerAdvice
 public class CommonExceptionAdvice {
-
+	//에러발생시 공통적으로 출력 할 페이지 설정.
 	private static final Logger logger =
 				LoggerFactory.getLogger(CommonExceptionAdvice.class);
 	

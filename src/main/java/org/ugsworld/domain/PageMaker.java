@@ -45,7 +45,7 @@ public class PageMaker {
 		
 		
 	}
-	
+	//UriComponents를 이용한 쿼리 생성.
 	public String makeQuery(int page) {
 		UriComponents uriComponents = 
 				UriComponentsBuilder.newInstance()
@@ -56,7 +56,7 @@ public class PageMaker {
 		return uriComponents.toUriString();
 		
 	}
-	
+	//UriComponents를 이용한 쿼리 생성(검색 추가)
 	public String makeSearch(int page) {
 		UriComponents uriComponents =
 				UriComponentsBuilder.newInstance()

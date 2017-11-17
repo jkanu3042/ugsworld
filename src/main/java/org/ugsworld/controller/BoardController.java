@@ -37,6 +37,7 @@ public class BoardController {
 		
 		model.addAttribute("list", service.listSearchCriteria(cri));
 		
+		//페이지 설정
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.setTotalCount(service.listSearchCount(cri));
@@ -59,8 +60,10 @@ public class BoardController {
 	public String remove(@RequestParam("bno") int bno, 
 						SearchCriteria cri, 
 						RedirectAttributes rttr) throws Exception {
+		
 		service.remove(bno);
 		
+		//수정 후의 돌아갈 리스트의 페이지&검색 파라미터 보존.
 		rttr.addAttribute("page", cri.getPage());
 		rttr.addAttribute("perPageNum", cri.getPerPageNum());
 		rttr.addAttribute("searchType", cri.getSearchType());
@@ -87,6 +90,7 @@ public class BoardController {
 		
 		service.modify(board);
 		
+		//수정 후의 돌아갈 리스트의 페이지&검색 파라미터 보존.
 		rttr.addAttribute("page", cri.getPage());
 		rttr.addAttribute("perPageNum", cri.getPerPageNum());
 		rttr.addAttribute("searchType", cri.getSearchType());
@@ -110,7 +114,6 @@ public class BoardController {
 		
 		rttr.addFlashAttribute("msg", "SUCCESS");
 		
-		//return "/board/success";
 		return "redirect:/board/list";
 	}
 	

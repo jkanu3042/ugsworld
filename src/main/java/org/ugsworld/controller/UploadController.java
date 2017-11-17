@@ -28,6 +28,7 @@ import org.ugsworld.util.UploadFileUtils;
 public class UploadController {
 	private static final Logger logger = 
 				LoggerFactory.getLogger(UploadController.class);
+	//저장 경로.
 	@Resource(name = "uploadPath")
 	private String uploadPath;
 	
@@ -49,13 +50,16 @@ public class UploadController {
 		return "uploadResult";
 	}
 	
+	//업로드 된 파일에 중복 발생을 피할 특정한 네이밍 부여. 
 	private String uploadFile(String originalName, byte[] fileData) throws Exception{
 		UUID uid = UUID.randomUUID();
 		
+		//Original filename과의 비교를 위한 구분선 추가.
 		String savedName = uid.toString() + "_" + originalName;
 		
 		File target = new File(uploadPath, savedName);
 		
+		//새롭게 지정한 파일(랜덤 배열+"_"+원본이름)에 데이터를 복사한다.
 		FileCopyUtils.copy(fileData, target);
 		
 		return savedName;

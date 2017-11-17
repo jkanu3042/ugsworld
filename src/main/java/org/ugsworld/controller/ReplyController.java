@@ -41,6 +41,7 @@ public class ReplyController {
 		return entity;
 	}
 	
+	//한 페이지에 출력되는 모든 리플 출력.
 	@RequestMapping(value = "/all/{bno}", method=RequestMethod.GET)
 	public ResponseEntity<List<ReplyVO>> list(@PathVariable("bno") Integer bno) {
 		
@@ -73,6 +74,7 @@ public class ReplyController {
 		
 		return entity;
 	}
+	
 	@RequestMapping(value = "/{rno}", method=RequestMethod.DELETE)
 	public ResponseEntity<String> delete( @PathVariable("rno")Integer rno) {
 		ResponseEntity<String> entity = null;
@@ -88,6 +90,8 @@ public class ReplyController {
 		return entity;
 	}
 	
+	//리플 페이지네이션.
+	//Rest 방식이므로 model 사용 불가. 페이지 처리는 게시글과 동일.
 	@RequestMapping(value = "/{bno}/{page}", method=RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>> listPage(	@PathVariable("bno") Integer bno,
 													@PathVariable("page")Integer page){
