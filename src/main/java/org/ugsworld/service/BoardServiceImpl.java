@@ -44,10 +44,13 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public void modify(BoardVO board) throws Exception {
 		dao.update(board);
+		
 	}
 
+	@Transactional
 	@Override
 	public void remove(Integer bno) throws Exception {
+		dao.deleteAttach(bno);
 		dao.delete(bno);
 	}
 

@@ -99,4 +99,9 @@ public class BoardDAOImpl implements BoardDAO {
 		return session.selectList(namespace+".getAttach", bno);
 	}
 
+	@Override
+	public void deleteAttach(Integer bno) throws Exception {
+		session.delete(namespace+".deleteAttach", bno);
+		
+	}
 }

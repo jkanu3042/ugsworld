@@ -41,5 +41,10 @@ public interface BoardDAO {
 	public List<String> getAttach(Integer bno) throws Exception;
 	
 	
+	public void deleteAttach(Integer bno) throws Exception;
+	
+	
+	
+	
 
 }

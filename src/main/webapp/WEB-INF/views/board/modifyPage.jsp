@@ -12,9 +12,11 @@
 					<h3 class="box-title">MODIFY BOARD</h3>
 				</div>
 				
-			<form role="form" method="post">	
+			<form role="form" action="modifyPage" method="post">	
 				<input type="hidden" name="page" value="${cri.page }">
 				<input type="hidden" name="perPageNum" value="${cri.perPageNum }">
+				<input type="hidden" name="searchType" value="${cri.searchType }">
+				<input type="hidden" name="keyword" value="${cri.keyword }">
 			
 				<div class="box-body">
 					<div class="form-group">
@@ -34,8 +36,8 @@
 			</form>
 		</div>
 		<div class="box-footer">
-			<button type="submit" class="btn btn-primary">SAVE</button>
-			<button type="submit" class="btn btn-warning">CANCEL</button>
+			<button type="submit" id="saveBtn" class="btn btn-primary">SAVE</button>
+			<button type="submit" id="cancleBtn" class="btn btn-warning">CANCEL</button>
 		</div>
 	</div>
 </div>
@@ -50,12 +52,13 @@ $(document).ready(function(){
 	var formObj = $("form[role='form']");
 	
 	console.log(formObj);
-	$(".btn-primary").on("click", function() {
+	$("#saveBtn").on("click", function() {
 		formObj.submit();
 	});
 	
-	$(".btn-warning").on("click", function(){
-		self.location = "/board/listPage?page=${cri.page}&perPageNum=${cri.perPageNum}";
+	$("#cancleBtn").on("click", function(){
+		self.location = "/board/list?page=${cri.page}&perPageNum=${cri.perPageNum}"
+				+ "&searchType=${cri.searchType}&keyword=${cri.keyword}";
 	});
 
 	

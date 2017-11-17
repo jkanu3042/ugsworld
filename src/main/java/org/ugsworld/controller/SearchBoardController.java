@@ -21,7 +21,7 @@ import org.ugsworld.domain.SearchCriteria;
 import org.ugsworld.service.BoardService;
 
 @Controller
-@RequestMapping("/sboard/*")
+@RequestMapping("/board/*")
 public class SearchBoardController {
 
 	private static final Logger logger = 
@@ -68,7 +68,7 @@ public class SearchBoardController {
 		
 		rttr.addFlashAttribute("msg","SUCCESS");
 		
-		return "redirect:/sboard/list";
+		return "redirect:/board/list";
 		
 	}
 	
@@ -94,7 +94,7 @@ public class SearchBoardController {
 		
 		rttr.addFlashAttribute("msg","SUCCESS");
 		
-		return "redirect:/sboard/list";
+		return "redirect:/board/list";
 	
 	}
 	
@@ -116,7 +116,7 @@ public class SearchBoardController {
 		rttr.addFlashAttribute("msg", "SUCCESS");
 		
 		//return "/board/success";
-		return "redirect:/sboard/list";
+		return "redirect:/board/list";
 	}
 	
 	@RequestMapping("/getAttach/{bno}")

@@ -37,16 +37,9 @@
 	<section class="hero">
 		<header>
 			<div class="wrapper">
-				<a href="/"><p class="logo"><strong>UsedGoodsWorld</strong></p></a>
+				<a href="/board/list"><p class="logo"><strong>UsedGoodsWorld</strong></p></a>
 				<nav>
-					<ul>
-						<li><a href="#">Buy</a></li>
-						<li><a href="#">Rent</a></li>
-						<li><a href="#">Sell</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-
+					<a href="#" class="login_btn">Register</a>
 					<a href="#" class="login_btn">Login</a>
 				</nav>
 			</div>

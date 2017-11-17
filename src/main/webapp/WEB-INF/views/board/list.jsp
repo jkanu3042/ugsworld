@@ -16,13 +16,13 @@ width:300px;
 			<ul class="properties_list">
 			<c:forEach items="${list}" var="boardVO">
 				<li>
-					<a href="/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}">
+					<a href="/board/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}">
 						<img src="/displayFile?fileName=${boardVO.fullName}" class="property_img"/>
 					</a>
 					<span class="price">$ ${boardVO.price}</span>
 					<div class="property_details">
 						<h1>
-							<a href="/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}">${boardVO.title}</a>
+							<a href="/board/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}">${boardVO.title}</a>
 							<span>[${boardVO.replycnt}]</span>
 							<span class="property_size">
 								<small> / 조회수 : ${boardVO.viewcnt }</small>
