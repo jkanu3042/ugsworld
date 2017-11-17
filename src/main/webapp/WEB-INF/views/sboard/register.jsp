@@ -28,21 +28,20 @@
 				name='title' class="form-control" placeholder="Enter Title">
 		</div>
 		<div class="form-group">
-			<label for="exampleInputPassword1">Content</label>
-			<textarea class="form-control" name="content" rows="10"
-				placeholder="Enter ...">
-(※양식은 삭제하지 말아주세요.)
-구입처 : 
-사용기간 :
-제품소개 :
-거래방식 : 
-연락처 :  							
-			</textarea>
-		</div>
-		<div class="form-group">
 			<label for="exampleInputEmail1">Writer</label> 
 			<input type="text"
 				name="writer" class="form-control" placeholder="Enter Writer">
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">Content</label>
+			<textarea class="form-control" name="content" rows="10"
+				placeholder="Enter ...">						
+			</textarea>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">price</label>
+			<input type="text"
+				name="price" class="form-control" placeholder="Enter Price">
 		</div>
 		
 		

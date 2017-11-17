@@ -13,9 +13,9 @@
 			<c:forEach items="${list}" var="boardVO">
 				<li>
 					<a href="/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}">
-						<img src="/resources/LaCasa/img/property_1.jpg" alt="" title="" class="property_img"/>
+						<img src="/displayFile?fileName=${boardVO.fullName}" alt="" title="" class="property_img"/>
 					</a>
-					<span class="price">$2500</span>
+					<span class="price">$ ${boardVO.price}</span>
 					<div class="property_details">
 						<h1>
 							<a href="/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}">${boardVO.title}</a>
@@ -107,10 +107,7 @@ $(document).ready(function(){
 		
 		self.location="register";
 	
-	});
-	
-	
-	
+	});	
 	
 });
 

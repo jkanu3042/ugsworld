@@ -4,8 +4,8 @@
 
 <mapper namespace="org.ugsworld.mapper.BoardMapper">
 	<insert id="create">
-		insert into tbl_board(title, content, writer)
-		values(#{title}, #{content}, #{writer})
+		insert into tbl_board(title, content, writer, price)
+		values(#{title}, #{content}, #{writer}, #{price})
 	</insert>
 	
 	<select id="read" resultType="BoardVO">
@@ -69,6 +69,54 @@
 		select count(bno) from tbl_board where bno > 0
 	</select>
 	
+	
+	
+	<resultMap id="board_attach" type="BoardVO">
+		<result property="bno" column="bno"/>
+		<result property="title" column="title"/>
+		<result property="content" column="content"/>
+		<result property="writer" column="writer"/>
+		<result property="regdate" column="regdate"/>
+		<result property="viewcnt" column="viewcnt"/>
+		<result property="replycnt" column="replycnt"/>
+		<result property="price" column="price"/>
+		<result property="fullName" column="fullName"/>
+	</resultMap>
+	
+	<select id="listSearch" resultMap="board_attach">
+		<![CDATA[
+		select 
+			b.bno as bno, 
+			b.title as title, 
+			b.content as content, 
+			b.writer as writer, 
+			b.regdate as regdate, 
+			b.viewcnt as viewcnt,
+			b.replycnt as replycnt,
+			b.price as price,
+			a.fullname as fullname
+		from 
+			tbl_board as b
+		left join
+			tbl_attach as a
+		using(bno)
+		
+		where bno > 0
+		
+		]]>
+		
+		<include refid="search"></include>
+		
+		<![CDATA[
+		order by bno desc, regdate desc
+		
+		limit #{pageStart}, #{perPageNum}
+		]]>
+	</select>
+	
+	
+	
+	<!--  
 	<select id="listSearch" resultType="BoardVO">
 		<![CDATA[
 		select 
@@ -83,10 +131,11 @@
 		
 		<![CDATA[
 		order by bno desc, regdate desc
+		
 		limit #{pageStart}, #{perPageNum}
 		]]>
 	</select>
-	
+	-->
 	<select id="listSearchCount" resultType="int">
 		<![CDATA[
 		select 
