@@ -37,16 +37,17 @@
 				        Post by ${boardVO.writer}, ${boardVO.regdate }
 				        </h5>
 				        <hr class="header">
-			            <p style="font-size:15px;">${boardVO.content}</p>
-			
+						<pre style="font-weight: 600;">
+							${boardVO.content}
+						</pre>
 			            <br><br>
 				    </div>
 				<ul class="mailbox-attachments clearfix uploadedList"></ul>    
 				   
 				<div class="box-footer">
-					<button type="submit" id="modBtn" class="btn btn-warning">Modify</button>
-					<button type="submit" id="rmBtn" class="btn btn-danger">REMOVE</button>
-					<button type="submit" id="lsBtn" class="btn btn-primary">LIST ALL</button>
+					<button type="submit" id="modBtn" class="btn btn-warning">수정</button>
+					<button type="submit" id="rmBtn" class="btn btn-danger">삭제</button>
+					<button type="submit" id="lsBtn" class="btn btn-primary">목록</button>
 				</div>
 			</div>
 			<!-- 컨텐츠 영역 끝  -->
@@ -318,6 +319,9 @@ $(document).ready(function(){
 		formObj.attr("action", "/board/list");
 		formObj.submit();
 	});
+	
+	//개행처리
+	$("#text_area").replaceAll("\r\n", "<br>");
 	
 	var bno = ${boardVO.bno};
 	var template = Handlebars.compile($("#templateAttach").html());

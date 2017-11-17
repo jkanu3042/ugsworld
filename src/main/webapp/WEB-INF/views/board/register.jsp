@@ -35,8 +35,7 @@
 		<div class="form-group">
 			<label for="exampleInputPassword1">Content</label>
 			<textarea class="form-control" name="content" rows="10"
-				placeholder="Enter ...">						
-			</textarea>
+				placeholder="Enter ..." id="content_textarea"></textarea>
 		</div>
 		<div class="form-group">
 			<label for="exampleInputPassword1">price</label>
@@ -154,8 +153,10 @@ $("#registerForm").submit(function(event){
 	$(".uploadedList .delbtn").each(function(index){
 		str += "<input type='hidden' name='files["+index+"]' value='"+ $(this).attr("href")+ "'>";
 	});
-	
 	that.append(str);
+	
+	$("#content_textarea").val().replace('/\n/g', '<br>') 
+	
 	
 	that.get(0).submit();
 });

@@ -24,13 +24,18 @@
 							name='title' class="form-control" value="${boardVO.title}">
 					</div>
 					<div class="form-group">
+						<label for="exampleInputEmail1">Writer</label> <input
+							type="text" name="writer" class="form-control"
+							value="${boardVO.writer}">
+					</div>					
+					<div class="form-group">
 						<label for="exampleInputPassword1">Content</label>
 						<textarea class="form-control" name="content" rows="10">${boardVO.content}</textarea>
 					</div>
 					<div class="form-group">
-						<label for="exampleInputEmail1">Writer</label> <input
+						<label for="exampleInputEmail1">Price</label> <input
 							type="text" name="writer" class="form-control"
-							value="${boardVO.writer}">
+							value="${boardVO.price}">
 					</div>
 				</div>
 			</form>

@@ -22,10 +22,10 @@ import org.ugsworld.service.BoardService;
 
 @Controller
 @RequestMapping("/board/*")
-public class SearchBoardController {
+public class BoardController {
 
 	private static final Logger logger = 
-					LoggerFactory.getLogger(SearchBoardController.class);
+					LoggerFactory.getLogger(BoardController.class);
 	
 	@Inject
 	private BoardService service;
@@ -101,16 +101,11 @@ public class SearchBoardController {
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public void registerGET() throws Exception {
 		
-		logger.info("register get.......");
 	}
 	
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public String registerPOST(BoardVO board, 
 						RedirectAttributes rttr) throws Exception {
-		
-		logger.info("register post......");
-		logger.info(board.toString());
-		
 		service.regist(board);
 		
 		rttr.addFlashAttribute("msg", "SUCCESS");
